@@ -11,9 +11,10 @@
  *  rooms, creates the parser and starts the game.  It also evaluates and
  *  executes the commands that the parser returns.
  *  I have created new rooms, upadate the game and change the exits.
+ *  Impleamented a new function printLocationInfo.
  * 
  * @author Murshida Parven and Michael Kölling and David J. Barnes
- * @version 01/15/2024
+ * @version 01/23/2024
  */
 
 public class Game 
@@ -76,6 +77,7 @@ public class Game
 
     /**
      * Print out the opening message for the player.
+     * Impleamenting a new function printLocationInfo.
      */
     private void printWelcome()
     {
@@ -86,21 +88,10 @@ public class Game
         System.out.println("Type'go :east or west or south or north ' command to exit ");
         System.out.println("Type quit command to quit the game");
         System.out.println();
-        System.out.println("You are " + currentRoom.getDescription());
-        System.out.print("Exits: ");
-        if(currentRoom.northExit != null) {
-            System.out.print("north ");
-        }
-        if(currentRoom.eastExit != null) {
-            System.out.print("east ");
-        }
-        if(currentRoom.southExit != null) {
-            System.out.print("south ");
-        }
-        if(currentRoom.westExit != null) {
-            System.out.print("west ");
-        }
-        System.out.println();
+        
+        printLocationInfo();
+        
+       
     }
 
     /**
@@ -150,6 +141,7 @@ public class Game
     /** 
      * Try to go in one direction. If there is an exit, enter
      * the new room, otherwise print an error message.
+     * Impleamenting a new function printLocationInfo.
      */
     private void goRoom(Command command) 
     {
@@ -180,23 +172,12 @@ public class Game
             System.out.println("There is no door!");
         }
         else {
-            currentRoom = nextRoom;
-            System.out.println("You are " + currentRoom.getDescription());
-            System.out.print("Exits: ");
-            if(currentRoom.northExit != null) {
-                System.out.print("north ");
+            
+        currentRoom = nextRoom;
+        
+        printLocationInfo();
+        
             }
-            if(currentRoom.eastExit != null) {
-                System.out.print("east ");
-            }
-            if(currentRoom.southExit != null) {
-                System.out.print("south ");
-            }
-            if(currentRoom.westExit != null) {
-                System.out.print("west ");
-            }
-            System.out.println();
-        }
     }
 
     /** 
@@ -206,12 +187,33 @@ public class Game
      */
     private boolean quit(Command command) 
     {
-        if(command.hasSecondWord()) {
+        if(command.hasSecondWord()){
             System.out.println("Quit what?");
             return false;
         }
         else {
             return true;  // signal that we want to quit
         }
+    }
+    /*
+     * creating a new function printLocationInfo.
+     */
+    private void printLocationInfo()
+    {
+        System.out.println("You are " + currentRoom.getDescription());
+        System.out.println("Exits: ");
+        if(currentRoom.northExit !=null){
+            System.out.println("north ");
+        }
+        if(currentRoom.eastExit != null) {
+        System.out.print("east ");
+        }
+        if(currentRoom.southExit != null) {
+        System.out.print("south ");
+        }
+        if(currentRoom.westExit != null) {
+        System.out.print("west ");
+        }
+        System.out.println();
     }
 }
