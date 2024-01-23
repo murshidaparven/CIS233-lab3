@@ -9,6 +9,7 @@
  * east, south, west.  For each direction, the room stores a reference
  * to the neighboring room, or null if there is no exit in that direction.
  * 
+ * return A description of the available exits.
  * created a new function getExit.
  * @Murshida Parven  Michael Kölling and David J. Barnes
  * 01/23/2024
@@ -86,5 +87,28 @@ public class Room
         return null;
     }
     
-
-}
+    /**Return a description of the room’s exits,
+     * for example, "Exits: north west".
+     * @return A description of the available exits.
+     */
+    
+    public String getExitString()
+    {
+        String exitString = "Exits: ";
+        if(northExit !=null){
+             exitString += "north";
+        }
+        if(eastExit != null) {
+            exitString += "east ";
+        }
+        if(southExit != null) {
+            exitString += "south ";
+        }
+        if(westExit != null) {
+            exitString += "west ";
+        }
+        return exitString;
+    }
+    
+} 
+ 
