@@ -9,8 +9,9 @@
  * east, south, west.  For each direction, the room stores a reference
  * to the neighboring room, or null if there is no exit in that direction.
  * 
- * @author  Michael Kölling and David J. Barnes
- * @version 2016.02.29
+ * created a new function getExit.
+ * @Murshida Parven  Michael Kölling and David J. Barnes
+ * 01/23/2024
  */
 public class Room 
 {
@@ -62,5 +63,28 @@ public class Room
     {
         return description;
     }
+    /*
+     * created a new function  getExit
+     */
+    public Room getExit(String direction)
+    {
+        if(direction.equals("north")){
+            return northExit;
+        }
+        
+        if(direction.equals("east")){
+            return eastExit;
+        }
+        
+        if(direction.equals("south")){
+            return southExit;
+        }
+        
+        if(direction.equals("west")){
+            return westExit;
+        }
+        return null;
+    }
+    
 
 }
