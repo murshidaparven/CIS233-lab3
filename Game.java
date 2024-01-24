@@ -1,3 +1,4 @@
+
 /**
  *  This class is the main class of the "World of Zuul" application. 
  *  "World of Zuul" is a very simple, text based adventure game.  Users 
@@ -12,6 +13,7 @@
  *  executes the commands that the parser returns.
  *  I have created new rooms, upadate the game and change the exits.
  *  Impleamented a new function printLocationInfo.
+ *  I have implemented the direction of the exits.
  * 
  * @author Murshida Parven and Michael Kölling and David J. Barnes
  * @version 01/23/2024
@@ -48,12 +50,16 @@ public class Game
         foodCorner = new Room("in the food corner,at the west :music");
         
         // initialise room exits
-        gym.setExits(null, indoorGame, null, null);
-        indoorGame.setExits(null, library, null, gym);
-        library.setExits(null,null, cafeteria, indoorGame);
-        cafeteria.setExits(library, null, music, null);
-        music.setExits(cafeteria,foodCorner, null, null);
-        foodCorner.setExits(null, null, null, music);
+        gym.setExit("east" , indoorGame );
+        indoorGame.setExit("east", library);
+        indoorGame.setExit("west", gym);
+        library.setExit("west",  indoorGame);
+        library.setExit("south",  cafeteria);
+        cafeteria.setExit("south", music);
+        cafeteria.setExit("north", library);
+        music.setExit("north",cafeteria);
+        music.setExit("east",foodCorner);
+        foodCorner.setExit("east", music);
         currentRoom = gym;  // start game outside
     }
 
@@ -192,8 +198,18 @@ public class Game
     private void printLocationInfo()
     {
         System.out.println("You are " + currentRoom.getDescription());
+        System.out.print("Exits: ");
+        String exits = "";
+        if (currentRoom.getExit("north") != null)
+            exits += "north ";
+        if (currentRoom.getExit("east") != null)
+            exits += "east ";
+        if (currentRoom.getExit("south") != null)
+            exits += "south ";
+        if (currentRoom.getExit("west") != null)
+            exits += "west ";
+        System.out.println(exits);
         
-        System.out.println(currentRoom.getExitString());
         System.out.println();
     }
 }

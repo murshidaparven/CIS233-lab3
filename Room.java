@@ -1,3 +1,4 @@
+import java.util.HashMap;
 /**
  * Class Room - a room in an adventure game.
  *
@@ -9,19 +10,14 @@
  * east, south, west.  For each direction, the room stores a reference
  * to the neighboring room, or null if there is no exit in that direction.
  * 
- * return A description of the available exits.
- * created a new function getExit.
- * @Murshida Parven  Michael Kölling and David J. Barnes
- * 01/23/2024
+ * @author  Michael Kölling and David J. Barnes
+ * @version 2016.02.29
  */
 public class Room 
 {
     public String description;
-    public Room northExit;
-    public Room southExit;
-    public Room eastExit;
-    public Room westExit;
-
+    private HashMap<String, Room> exits;
+    
     /**
      * Create a room described "description". Initially, it has
      * no exits. "description" is something like "a kitchen" or
@@ -31,32 +27,31 @@ public class Room
     public Room(String description) 
     {
         this.description = description;
+        exits = new HashMap<>();
     }
 
-    /**
-     * Define the exits of this room.  Every direction either leads
-     * to another room or is null (no exit there).
-     * @param north The north exit.
-     * @param east The east east.
-     * @param south The south exit.
-     * @param west The west exit.
-     */
-    public void setExits(Room north, Room east, Room south, Room west) 
+    
+    
+    
+    
+    /*** Define an exit from this room.* @param direction The direction of the exit.
+       * @param neighbor The room in the given direction.
+        */
+      
+    public void setExit(String direction, Room neighbor)
     {
-        if(north != null) {
-            northExit = north;
-        }
-        if(east != null) {
-            eastExit = east;
-        }
-        if(south != null) {
-            southExit = south;
-        }
-        if(west != null) {
-            westExit = west;
-        }
+        exits.put(direction, neighbor);
     }
-
+    
+    
+    
+    /**
+     * Defineing the exit direction
+     */
+    public Room getExit(String direction)
+    {
+        return exits.get(direction);
+    }
     /**
      * @return The description of the room.
      */
@@ -64,51 +59,5 @@ public class Room
     {
         return description;
     }
-    /*
-     * created a new function  getExit
-     */
-    public Room getExit(String direction)
-    {
-        if(direction.equals("north")){
-            return northExit;
-        }
-        
-        if(direction.equals("east")){
-            return eastExit;
-        }
-        
-        if(direction.equals("south")){
-            return southExit;
-        }
-        
-        if(direction.equals("west")){
-            return westExit;
-        }
-        return null;
-    }
-    
-    /**Return a description of the room’s exits,
-     * for example, "Exits: north west".
-     * @return A description of the available exits.
-     */
-    
-    public String getExitString()
-    {
-        String exitString = "Exits: ";
-        if(northExit !=null){
-             exitString += "north";
-        }
-        if(eastExit != null) {
-            exitString += "east ";
-        }
-        if(southExit != null) {
-            exitString += "south ";
-        }
-        if(westExit != null) {
-            exitString += "west ";
-        }
-        return exitString;
-    }
-    
-} 
- 
+
+}
