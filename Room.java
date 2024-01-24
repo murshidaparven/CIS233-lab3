@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.Set;
 /**
  * Class Room - a room in an adventure game.
  *
@@ -9,7 +10,7 @@ import java.util.HashMap;
  * connected to other rooms via exits.  The exits are labelled north, 
  * east, south, west.  For each direction, the room stores a reference
  * to the neighboring room, or null if there is no exit in that direction.
- * 
+ * I have created a new getLongFunction to return the derections.
  * @author  Michael Kölling and David J. Barnes
  * @version 2016.02.29
  */
@@ -17,6 +18,7 @@ public class Room
 {
     public String description;
     private HashMap<String, Room> exits;
+    
     
     /**
      * Create a room described "description". Initially, it has
@@ -31,6 +33,17 @@ public class Room
     }
 
     
+    public String getExitString()
+    {
+       String returnString = "Exit: ";
+       Set<String> keys = exits.keySet();
+       for(String exit : keys){
+           returnString += "" + exit; 
+        }
+        
+       return returnString;
+       
+    }
     
     
     
@@ -59,5 +72,13 @@ public class Room
     {
         return description;
     }
-
+    
+    /** * Return a long description of this room, of the form: 
+    *     You are in the gym. 
+    *     Exits: north west * @return A description of the room, including exits. 
+    */ 
+   public String getLongDescription() 
+   {  
+       return "You are " + description + ".\n" + getExitString(); 
+    }
 }

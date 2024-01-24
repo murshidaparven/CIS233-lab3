@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Game
-comment0.text=\n\ \ This\ class\ is\ the\ main\ class\ of\ the\ "World\ of\ Zuul"\ application.\ \n\ \ "World\ of\ Zuul"\ is\ a\ very\ simple,\ text\ based\ adventure\ game.\ \ Users\ \n\ \ can\ walk\ around\ some\ scenery.\ That's\ all.\ It\ should\ really\ be\ extended\ \n\ \ to\ make\ it\ more\ interesting\!\n\ \n\ \ To\ play\ this\ game,\ create\ an\ instance\ of\ this\ class\ and\ call\ the\ "play"\n\ \ method.\n\ \n\ \ This\ main\ class\ creates\ and\ initialises\ all\ the\ others\:\ it\ creates\ all\n\ \ rooms,\ creates\ the\ parser\ and\ starts\ the\ game.\ \ It\ also\ evaluates\ and\n\ \ executes\ the\ commands\ that\ the\ parser\ returns.\n\ \ I\ have\ created\ new\ rooms,\ upadate\ the\ game\ and\ change\ the\ exits.\n\ \ Impleamented\ a\ new\ function\ printLocationInfo.\n\ \ I\ have\ implemented\ the\ direction\ of\ the\ exits.\n\ \n\ @author\ Murshida\ Parven\ and\ Michael\ K\u00F6lling\ and\ David\ J.\ Barnes\n\ @version\ 01/23/2024\n
+comment0.text=\n\ \ This\ class\ is\ the\ main\ class\ of\ the\ "World\ of\ Zuul"\ application.\ \n\ \ "World\ of\ Zuul"\ is\ a\ very\ simple,\ text\ based\ adventure\ game.\ \ Users\ \n\ \ can\ walk\ around\ some\ scenery.\ That's\ all.\ It\ should\ really\ be\ extended\ \n\ \ to\ make\ it\ more\ interesting\!\n\ \n\ \ To\ play\ this\ game,\ create\ an\ instance\ of\ this\ class\ and\ call\ the\ "play"\n\ \ method.\n\ \n\ \ This\ main\ class\ creates\ and\ initialises\ all\ the\ others\:\ it\ creates\ all\n\ \ rooms,\ creates\ the\ parser\ and\ starts\ the\ game.\ \ It\ also\ evaluates\ and\n\ \ executes\ the\ commands\ that\ the\ parser\ returns.\n\ \ I\ have\ created\ new\ rooms,\ upadate\ the\ game\ and\ change\ the\ exits.\n\ \ Impleamented\ a\ new\ function\ printLocationInfo.\n\ \ I\ have\ implemented\ the\ direction\ of\ the\ exits.\n\ \ I\ have\ implemented\ the\ getLongDerection\ function.\n\ @author\ Murshida\ Parven\ and\ Michael\ K\u00F6lling\ and\ David\ J.\ Barnes\n\ @version\ 01/23/2024\n
 comment1.params=
 comment1.target=Game()
 comment1.text=\n\ Create\ the\ game\ and\ initialise\ its\ internal\ map.\n
@@ -27,5 +27,5 @@ comment8.target=boolean\ quit(Command)
 comment8.text=\ \n\ "Quit"\ was\ entered.\ Check\ the\ rest\ of\ the\ command\ to\ see\n\ whether\ we\ really\ quit\ the\ game.\n\ @return\ true,\ if\ this\ command\ quits\ the\ game,\ false\ otherwise.\n
 comment9.params=
 comment9.target=void\ printLocationInfo()
-comment9.text=\n\ creating\ a\ new\ function\ printLocationInfo.\n
+comment9.text=\n\ creating\ a\ new\ function\ printLocationInfo.\n\ implemented\ the\ getLongDerection\ function.\n
 numComments=10

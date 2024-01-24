@@ -14,7 +14,7 @@
  *  I have created new rooms, upadate the game and change the exits.
  *  Impleamented a new function printLocationInfo.
  *  I have implemented the direction of the exits.
- * 
+ *  I have implemented the getLongDerection function.
  * @author Murshida Parven and Michael Kölling and David J. Barnes
  * @version 01/23/2024
  */
@@ -51,15 +51,15 @@ public class Game
         
         // initialise room exits
         gym.setExit("east" , indoorGame );
-        indoorGame.setExit("east", library);
-        indoorGame.setExit("west", gym);
-        library.setExit("west",  indoorGame);
-        library.setExit("south",  cafeteria);
-        cafeteria.setExit("south", music);
-        cafeteria.setExit("north", library);
-        music.setExit("north",cafeteria);
-        music.setExit("east",foodCorner);
-        foodCorner.setExit("east", music);
+        indoorGame.setExit("east ", library);
+        indoorGame.setExit("west ", gym);
+        library.setExit("west ",  indoorGame);
+        library.setExit("south ",  cafeteria);
+        cafeteria.setExit("south ", music);
+        cafeteria.setExit("north ", library);
+        music.setExit("north ",cafeteria);
+        music.setExit("east ",foodCorner);
+        foodCorner.setExit("east ", music);
         currentRoom = gym;  // start game outside
     }
 
@@ -194,22 +194,15 @@ public class Game
     }
     /*
      * creating a new function printLocationInfo.
+     * implemented the getLongDerection function.
      */
     private void printLocationInfo()
     {
+        /*
         System.out.println("You are " + currentRoom.getDescription());
-        System.out.print("Exits: ");
-        String exits = "";
-        if (currentRoom.getExit("north") != null)
-            exits += "north ";
-        if (currentRoom.getExit("east") != null)
-            exits += "east ";
-        if (currentRoom.getExit("south") != null)
-            exits += "south ";
-        if (currentRoom.getExit("west") != null)
-            exits += "west ";
-        System.out.println(exits);
+        System.out.println(currentRoom.getExitString());*/
         
+        System.out.println(currentRoom.getLongDescription());        
         System.out.println();
     }
 }
