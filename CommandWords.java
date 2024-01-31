@@ -1,3 +1,5 @@
+import javax.swing.*;
+
 /**
  * This class is part of the "World of Zuul" application. 
  * "World of Zuul" is a very simple, text based adventure game.  
@@ -23,6 +25,26 @@ public class CommandWords
     public CommandWords()
     {
         // nothing to do at the moment...
+    }
+    
+     /*** Print all valid commands to System.out.*/
+    public void getCommandList()
+    {
+        JFrame frame1 = new JFrame();
+        // setting close operation
+        frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame1.setSize(400, 500);
+        frame1.setLayout(null);
+        String totalString = "";
+        for(String command : validCommands) {
+            totalString += command + ", ";
+        }
+        JTextField t1;
+        t1 = new JTextField("Valid commands: "+totalString);
+        t1.setBounds(25, 100, 300, 60);
+        frame1.add(t1);
+        frame1.setVisible(true);
+        
     }
     /*** Print all valid commands to System.out.*/
     public void showAll()

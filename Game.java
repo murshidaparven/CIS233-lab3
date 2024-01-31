@@ -18,9 +18,10 @@
  *  added a look command in the game.
  *  Added a new command in the game.
  *  Print all comand words.
+ *  If press help button it will show a text field in a window.
  *  
  * @author Murshida Parven and Michael Kölling and David J. Barnes
- * @version 01/23/2024
+ * @version 01/30/2024
  */
 
 public class Game 
@@ -97,8 +98,7 @@ public class Game
         System.out.println("World of Zuul is a new, incredibly boring adventure game.");
         System.out.println("Type'go :east or west or south or north ' command to exit ");
         System.out.println("Your command words are:");
-        parser.showCommands();
-        System.out.println();
+        System.out.println("go , help, quit, look, drink");
         
         printLocationInfo();
         
@@ -151,9 +151,10 @@ public class Game
     {
         System.out.println("You are lost. You are alone. You wander");
         System.out.println("around at the university.");
+        parser.showCommands();
         System.out.println();
-        System.out.println("Your command words are:");
-        System.out.println("   go quit help");
+
+        
     }
 
     /** 
