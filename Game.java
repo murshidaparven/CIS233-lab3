@@ -17,6 +17,8 @@
  *  I have implemented the getLongDerection function.
  *  added a look command in the game.
  *  Added a new command in the game.
+ *  Print all comand words.
+ *  
  * @author Murshida Parven and Michael Kölling and David J. Barnes
  * @version 01/23/2024
  */
@@ -86,17 +88,16 @@ public class Game
     /**
      * Print out the opening message for the player.
      * Impleamenting a new function printLocationInfo.
+     * Print all comand words
      */
     private void printWelcome()
     {
         System.out.println();
         System.out.println("Welcome to the World of Zuul!");
         System.out.println("World of Zuul is a new, incredibly boring adventure game.");
-        System.out.println("Type 'help' if you need help.");
         System.out.println("Type'go :east or west or south or north ' command to exit ");
-        System.out.println("Type'look' to see where you are.");
-        System.out.println("Type quit command to quit the game");
-        
+        System.out.println("Your command words are:");
+        parser.showCommands();
         System.out.println();
         
         printLocationInfo();
@@ -119,6 +120,7 @@ public class Game
         }
 
         String commandWord = command.getCommandWord();
+        
         if (commandWord.equals("help")) {
             printHelp();
         }
@@ -134,7 +136,7 @@ public class Game
         else if (commandWord.equals("quit")) {
             wantToQuit = quit(command);
         }
-
+        
         return wantToQuit;
     }
 
@@ -222,4 +224,5 @@ public class Game
         System.out.println(currentRoom.getLongDescription());        
         System.out.println();
     }
+    
 }
