@@ -51,15 +51,15 @@ public class Game
         
         // initialise room exits
         gym.setExit("east" , indoorGame );
-        indoorGame.setExit("east ", library);
-        indoorGame.setExit("west ", gym);
-        library.setExit("west ",  indoorGame);
-        library.setExit("south ",  cafeteria);
-        cafeteria.setExit("south ", music);
-        cafeteria.setExit("north ", library);
-        music.setExit("north ",cafeteria);
-        music.setExit("east ",foodCorner);
-        foodCorner.setExit("east ", music);
+        indoorGame.setExit("east", library);
+        indoorGame.setExit("west", gym);
+        library.setExit("west",  indoorGame);
+        library.setExit("south",  cafeteria);
+        cafeteria.setExit("south", music);
+        cafeteria.setExit("north", library);
+        music.setExit("north",cafeteria);
+        music.setExit("east",foodCorner);
+        foodCorner.setExit("east", music);
         currentRoom = gym;  // start game outside
     }
 
