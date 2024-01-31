@@ -4,16 +4,16 @@
  * 
  * This class holds an enumeration of all command words known to the game.
  * It is used to recognise commands as they are typed in.
- *
+ * I have added a new command.
  * @author  Michael Kölling and David J. Barnes
- * @version 2016.02.29
+ * @01/31/2024
  */
 
 public class CommandWords
 {
     // a constant array that holds all valid command words
     private static final String[] validCommands = {
-        "go", "quit", "help"
+        "go", "quit", "help", "look"
     };
 
     /**

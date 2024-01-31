@@ -15,6 +15,7 @@
  *  Impleamented a new function printLocationInfo.
  *  I have implemented the direction of the exits.
  *  I have implemented the getLongDerection function.
+ *  added a look command in the game.
  * @author Murshida Parven and Michael Kölling and David J. Barnes
  * @version 01/23/2024
  */
@@ -121,6 +122,9 @@ public class Game
         else if (commandWord.equals("go")) {
             goRoom(command);
         }
+        else if(commandWord.equals("look")) {
+            look();
+        }
         else if (commandWord.equals("quit")) {
             wantToQuit = quit(command);
         }
@@ -191,6 +195,9 @@ public class Game
         else {
             return true;  // signal that we want to quit
         }
+    }
+    private void look(){
+        System.out.println(currentRoom.getLongDescription());
     }
     /*
      * creating a new function printLocationInfo.
