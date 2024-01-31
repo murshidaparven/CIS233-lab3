@@ -16,6 +16,7 @@
  *  I have implemented the direction of the exits.
  *  I have implemented the getLongDerection function.
  *  added a look command in the game.
+ *  Added a new command in the game.
  * @author Murshida Parven and Michael Kölling and David J. Barnes
  * @version 01/23/2024
  */
@@ -93,7 +94,9 @@ public class Game
         System.out.println("World of Zuul is a new, incredibly boring adventure game.");
         System.out.println("Type 'help' if you need help.");
         System.out.println("Type'go :east or west or south or north ' command to exit ");
+        System.out.println("Type'look' to see where you are.");
         System.out.println("Type quit command to quit the game");
+        
         System.out.println();
         
         printLocationInfo();
@@ -124,6 +127,9 @@ public class Game
         }
         else if(commandWord.equals("look")) {
             look();
+        }
+        else if(commandWord.equals("drink")) {
+            drink();
         }
         else if (commandWord.equals("quit")) {
             wantToQuit = quit(command);
@@ -198,6 +204,10 @@ public class Game
     }
     private void look(){
         System.out.println(currentRoom.getLongDescription());
+    }
+    private void drink(){
+        System.out.println(currentRoom.getLongDescription());
+        System.out.println("You are not tharsty any more.");
     }
     /*
      * creating a new function printLocationInfo.
