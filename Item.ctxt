@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=Item
+comment0.text=\n\ Write\ a\ description\ of\ class\ Item\ here.\n\n\ @author\ (Murshida\ Parven)\n\ @version\ (01/30/2024)\n
+comment1.params=description\ weight
+comment1.target=Item(java.lang.String,\ int)
+comment2.params=
+comment2.target=java.lang.String\ getShortDescription()
+comment3.params=
+comment3.target=int\ getweight()
+comment4.params=
+comment4.target=java.lang.String\ getLongDescription()
+comment5.params=
+comment5.target=java.lang.String\ getItemString()
+comment5.text=public\ ArrayList<Item>\ getItems()\n\ \ \ \ {\n\ \ \ \ \ \ \ \ return\ items;\n}
+numComments=6

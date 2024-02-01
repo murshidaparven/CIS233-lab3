@@ -28,6 +28,7 @@ public class Game
 {
     private Parser parser;
     private Room currentRoom;
+    private Item item;
     
     /**
      * Create the game and initialise its internal map.
@@ -56,8 +57,14 @@ public class Game
         
         // initialise room exits
         gym.setExit("east" , indoorGame );
+        Item i0 = new Item("gym1",25);
+        gym.addItem(i0);
         indoorGame.setExit("east", library);
         indoorGame.setExit("west", gym);
+        Item i1 = new Item("indGame1",50);
+        Item i2 = new Item("indGame2",10);
+        indoorGame.addItem(i1);
+        indoorGame.addItem(i2);
         library.setExit("west",  indoorGame);
         library.setExit("south",  cafeteria);
         cafeteria.setExit("south", music);
@@ -99,10 +106,10 @@ public class Game
         System.out.println("Type'go :east or west or south or north ' command to exit ");
         System.out.println("Your command words are:");
         System.out.println("go , help, quit, look, drink");
+        System.out.println("first 'look' command for current location");
+        System.out.println();
+        //System.out.println(currentRoom.getLongDescription());
         
-        printLocationInfo();
-        
-       
     }
 
     /**
