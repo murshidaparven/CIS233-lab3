@@ -18,6 +18,7 @@
  *  added a look command in the game.
  *  Added a new command in the game.
  *  Print all comand words.
+ *  Added item class that will add item description and weight.
  *  If press help button it will show a text field in a window.
  *  
  * @author Murshida Parven and Michael Kölling and David J. Barnes
